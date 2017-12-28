@@ -1,0 +1,125 @@
+<WSN>
+ <Declaration></Declaration>
+ <Network ID="002" NumberOfSensors="6" NumberOfPackets="7" SensorMaxBufferSize="5" SensorMaxQueueSize="5" ChannelMaxBufferSize="5">
+  <Process Name="" Parameter="" Zoom="1" StateCounter="">
+   <Sensors>
+    <Sensor Energy="5.0" Name="Ss1" Init="True" SType="1" id="1" MaxSendingRate="5" MaxProcessingRate="5" CGNLevel="0">
+     <Position X="2.03" Y="2.25" Width="0.2"/>
+     <Label>
+      <Position X="2.57" Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Sensor>
+    <Sensor Energy="5.0"  Name="Ss3" Init="False" SType="3" id="3" MaxSendingRate="5" MaxProcessingRate="5" CGNLevel="0">
+     <Position X="4.19" Y="1.31" Width="0.2"/>
+     <Label>
+      <Position X="2.57" Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Sensor>
+    <Sensor Energy="5.0"  Name="Ss4" Init="False" SType="3" id="4" MaxSendingRate="5" MaxProcessingRate="5" CGNLevel="0">
+     <Position X="3.98" Y="2.85" Width="0.2"/>
+     <Label>
+      <Position X="2.57" Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Sensor>
+    <Sensor Energy="5.0"  Name="Ss2" Init="False" SType="3" id="2" MaxSendingRate="5" MaxProcessingRate="5" CGNLevel="0">
+     <Position X="0.436923076923077" Y="3.322307692307692" Width="0.2"/>
+     <Label>
+      <Position X="2.57" Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Sensor>
+    <Sensor Energy="5.0"  Name="Ss6" Init="False" SType="2" id="6" MaxSendingRate="5" MaxProcessingRate="5" CGNLevel="0">
+     <Position X="7.06" Y="1.15" Width="0.2"/>
+     <Label>
+      <Position X="2.57" Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Sensor>
+    <Sensor Energy="5.0"  Name="Ss5" Init="False" SType="3" id="5" MaxSendingRate="5" MaxProcessingRate="5" CGNLevel="0">
+     <Position X="5.27" Y="2.05" Width="0.2"/>
+     <Label>
+      <Position X="2.57" Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Sensor>
+   </Sensors>
+   <Links>
+    <Link LType="" CType="" MaxSendingRate="5" CGNLevel="" ProbabilityPathCongestion="" id="1_3">
+     <From>Ss1</From>
+     <To>Ss3</To>
+     <Select></Select>
+     <Event></Event>
+     <ClockGuard></ClockGuard>
+     <Guard></Guard>
+     <Program></Program>
+     <ClockReset></ClockReset>
+     <Label>
+      <Position X="2.57 " Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Link>
+    <Link LType="" CType="" MaxSendingRate="5" CGNLevel="" ProbabilityPathCongestion="" id="1_4">
+     <From>Ss1</From>
+     <To>Ss4</To>
+     <Select></Select>
+     <Event></Event>
+     <ClockGuard></ClockGuard>
+     <Guard></Guard>
+     <Program></Program>
+     <ClockReset></ClockReset>
+     <Label>
+      <Position X="2.57 " Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Link>
+    <Link LType="" CType="" MaxSendingRate="5" CGNLevel="" ProbabilityPathCongestion="" id="4_2">
+     <From>Ss4</From>
+     <To>Ss2</To>
+     <Select></Select>
+     <Event></Event>
+     <ClockGuard></ClockGuard>
+     <Guard></Guard>
+     <Program></Program>
+     <ClockReset></ClockReset>
+     <Label>
+      <Position X="2.57 " Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Link>
+    <Link LType="" CType="" MaxSendingRate="5" CGNLevel="" ProbabilityPathCongestion="" id="3_2">
+     <From>Ss3</From>
+     <To>Ss2</To>
+     <Select></Select>
+     <Event></Event>
+     <ClockGuard></ClockGuard>
+     <Guard></Guard>
+     <Program></Program>
+     <ClockReset></ClockReset>
+     <Label>
+      <Position X="2.57 " Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Link>
+    <Link LType="" CType="" MaxSendingRate="5" CGNLevel="" ProbabilityPathCongestion="" id="2_5">
+     <From>Ss2</From>
+     <To>Ss5</To>
+     <Select></Select>
+     <Event></Event>
+     <ClockGuard></ClockGuard>
+     <Guard></Guard>
+     <Program></Program>
+     <ClockReset></ClockReset>
+     <Label>
+      <Position X="2.57 " Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Link>
+    <Link LType="" CType="" MaxSendingRate="5" CGNLevel="" ProbabilityPathCongestion="" id="5_6">
+     <From>Ss5</From>
+     <To>Ss6</To>
+     <Select></Select>
+     <Event></Event>
+     <ClockGuard></ClockGuard>
+     <Guard></Guard>
+     <Program></Program>
+     <ClockReset></ClockReset>
+     <Label>
+      <Position X="2.57 " Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Link>
+   </Links>
+  </Process >
+ </Network>
+</WSN>

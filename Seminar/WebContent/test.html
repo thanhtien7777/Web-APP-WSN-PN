@@ -1,0 +1,64 @@
+<html>
+<script src="./file/underscore-min.js"></script>
+<script src="./file/filesaver.js "></script>
+<script src="./file/localread.js "></script>
+<script src="./file/csvsup.js "></script>
+<script src="./file/x2js.js "></script>
+<script type="text/javascript">
+var config = {};
+config.skipEmptyTextNodesForObj = true;
+config.stripWhitespaces = true;
+var x2js = new X2JS(config);      
+function assignText(s) {
+   document.getElementById('txt1').value = s;
+}
+function runit(s) {
+   var t;
+   var s;
+   var keys = {};
+   var objects = {};
+   var msg='Invalid XML entered.';
+   if(s.trim()!="") {
+      try {
+       t=x2js.xml_str2json(s);
+       if(document.getElementById("chkRemoveRoot").checked && _.keys(t).length===1 && !_.isArray(t)) {
+           t = t[_.keys(t)];
+       }
+       JSON.stringify(t,function(key,value){if(_.isArray(value))keys[key]=1;if(_.isObject(value)&& !_.isArray(value))objects[key]=1;return value;});
+       t = JSON.stringify(t,
+           function(key,value){
+                //alert("key="+key+", and value="+JSON.stringify(value));
+                if(key==="__prefix")return undefined;
+                if(key in keys && !_.isArray(value))return [value]; 
+                if(value==="" && key in objects && !(key in keys))return undefined;
+                return value;  
+           }
+           ,3);
+       if(t!="null" && t!="undefined")document.getElementById('txta').value = t;
+       }catch (e) {
+           alert(msg);
+           return;
+       }
+       if(!t || t=="null") {alert(msg); }
+   }   
+}
+</script>
+</head> 
+<body>
+<div >
+<form id="frm1" name="frm1" role="form">
+	<div> 
+    <input type="file" id="f1" class="btn" onchange="loadTextFile(this,assignText)" title="Choose a local XML file">	   
+	<textarea  rows="10S" cols="80" id="txt1" placeholder="" onchange="if(this.value!=&#39;&#39;)runit(this.value)" wrap="off"></textarea>
+	</div>
+		</form>
+			<div>
+                 <input type="button" id="btnRun" value="Convert XML To JSON" class="btn btn-primary" title="Convert XML To JSON" onclick="runit(document.getElementById(&#39;txt1&#39;).value)">
+                <input type="text"  size="0" id="chkRemoveRoot" value="==!">  				
+				<textarea id="txta" rows="15" cols="100" wrap="off" ></textarea>
+			</div>
+			<div >
+						<label>Save:</label>
+<input type="text" size="15" id="fn" value="convertjson" class="form-control" title="Enter filename without extension">
+<input type="button" class="btn btn-primary" value="Download" onclick="saveFile(document.getElementById(&#39;txta&#39;).value,&#39;json&#39;)">
+</div></body></html>

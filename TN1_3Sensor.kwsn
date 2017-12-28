@@ -1,0 +1,68 @@
+<WSN>
+ <Declaration></Declaration>
+ <Network ID="001" NumberOfSensors="3" NumberOfPackets="5" SensorMaxBufferSize="3" SensorMaxQueueSize="3" ChannelMaxBufferSize="3">
+  <Process Name="001" Parameter="" Zoom="1" StateCounter="6">
+   <Sensors>
+    <Sensor Energy="1.0" Name="Ss1" Init="True" SType="1" id="1" MaxSendingRate="3" MaxProcessingRate="3" CGNLevel="0">
+     <Position X="2.85" Y="1.36" Width="0.2"/>
+     <Label>
+      <Position X="2.57" Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Sensor>
+    <Sensor  Energy="1.0" Name="Ss2" Init="False" SType="3" id="2" MaxSendingRate="3" MaxProcessingRate="3" CGNLevel="0">
+     <Position X="5.48" Y="1.17" Width="0.2"/>
+     <Label>
+      <Position X="2.57" Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Sensor>
+    <Sensor  Energy="1.0" Name="Ss3" Init="False" SType="2" id="3" MaxSendingRate="3" MaxProcessingRate="2" CGNLevel="0">
+     <Position X="7.716153846153846" Y="3.0215384615384617" Width="0.2"/>
+     <Label>
+      <Position X="2.57" Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Sensor>
+   </Sensors>
+   <Links>
+    <Link LType="Real" CType="2" MaxSendingRate="3" CGNLevel="0" ProbabilityPathCongestion="0.12" id="1_2">
+     <From>Ss1</From>
+     <To>Ss2</To>
+     <Select></Select>
+     <Event></Event>
+     <ClockGuard></ClockGuard>
+     <Guard></Guard>
+     <Program></Program>
+     <ClockReset></ClockReset>
+     <Label>
+      <Position X="2.57 " Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Link>
+    <Link LType="Real" CType="2" MaxSendingRate="3" CGNLevel="0" ProbabilityPathCongestion="0.29" id="2_3">
+     <From>Ss2</From>
+     <To>Ss3</To>
+     <Select></Select>
+     <Event></Event>
+     <ClockGuard></ClockGuard>
+     <Guard></Guard>
+     <Program></Program>
+     <ClockReset></ClockReset>
+     <Label>
+      <Position X="2.57 " Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Link>
+    <Link LType="Real" CType="2" MaxSendingRate="3" CGNLevel="0" ProbabilityPathCongestion="0.3" id="1_3">
+     <From>Ss1</From>
+     <To>Ss3</To>
+     <Select></Select>
+     <Event></Event>
+     <ClockGuard></ClockGuard>
+     <Guard></Guard>
+     <Program></Program>
+     <ClockReset></ClockReset>
+     <Label>
+      <Position X="2.57 " Y="1.58" Width="0.6219791"/>
+     </Label>
+    </Link>
+   </Links>
+  </Process >
+ </Network>
+</WSN>
